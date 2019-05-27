@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
+from app.models import User
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -8,19 +10,19 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
-'''
-Большинство расширений Flask используют соглашение об именах flask_ для импорта
-верхнего уровня. В этом случае Flask-WTF меняет все свои символы под flask_wtf.
-Здесь базовый класс FlaskForm импортируется из верхней части app/forms.py.
-Четыре класса, которые представляют типы полей, которые я использую для этой формы,
-импортируются непосредственно из пакета WTForms, поскольку расширение Flask-WTF
-не предоставляет настраиваемые версии. Для каждого поля объект создается как
-переменная класса в классе LoginForm. Каждому полю присваивается описание или
-метка в качестве первого аргумента.
+class RegistrationForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Register')
 
+    def validate_usrename(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different username.')
 
-Дополнительный аргумент validators, который вы видите в некоторых полях,
-используется для привязки поведения проверки к полям. Валидатор DataRequired
-просто проверяет, что поле не отправлено пустым. Существует еще много доступных
-валидаторов, некоторые из которых будут использоваться в других формах.
-'''
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different email address.')
