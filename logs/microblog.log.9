@@ -1,4 +1,4 @@
-2019-06-03 17:30:14,404 ERROR: Exception on /explore [GET] [in /home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-03 13:10:14,207 ERROR: Exception on /explore [GET] [in /home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,15 +29,15 @@ Traceback (most recent call last):
   File "/home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
   File "/home/arthur/Документы/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
+    {% extends 'base.html' %}
   File "/home/arthur/Документы/microblog/app/templates/base.html", line 33, in top-level template code
     {% block content %}
-  File "/home/arthur/Документы/microblog/app/templates/index.html", line 19, in block "content"
+  File "/home/arthur/Документы/microblog/app/templates/index.html", line 21, in block "content"
     {% include '_post.html' %}
   File "/home/arthur/Документы/microblog/app/templates/_post.html", line 3, in top-level template code
     <td><img src="{{ post.author.avatar(36) }}"></td>
 jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
-2019-06-03 17:33:48,981 ERROR: Exception on /explore [GET] [in /home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-03 13:10:36,267 ERROR: Exception on /explore [GET] [in /home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,16 +68,15 @@ Traceback (most recent call last):
   File "/home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
   File "/home/arthur/Документы/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
+    {% extends 'base.html' %}
   File "/home/arthur/Документы/microblog/app/templates/base.html", line 33, in top-level template code
     {% block content %}
-  File "/home/arthur/Документы/microblog/app/templates/index.html", line 19, in block "content"
+  File "/home/arthur/Документы/microblog/app/templates/index.html", line 21, in block "content"
     {% include '_post.html' %}
   File "/home/arthur/Документы/microblog/app/templates/_post.html", line 3, in top-level template code
     <td><img src="{{ post.author.avatar(36) }}"></td>
 jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
-2019-06-03 17:33:52,813 INFO: Microblog startup [in /home/arthur/Документы/microblog/app/__init__.py:43]
-2019-06-03 17:33:55,841 ERROR: Exception on /explore [GET] [in /home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-06-03 13:10:38,980 ERROR: Exception on /explore [GET] [in /home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -108,12 +107,12 @@ Traceback (most recent call last):
   File "/home/arthur/Документы/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
   File "/home/arthur/Документы/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
+    {% extends 'base.html' %}
   File "/home/arthur/Документы/microblog/app/templates/base.html", line 33, in top-level template code
     {% block content %}
-  File "/home/arthur/Документы/microblog/app/templates/index.html", line 19, in block "content"
+  File "/home/arthur/Документы/microblog/app/templates/index.html", line 21, in block "content"
     {% include '_post.html' %}
   File "/home/arthur/Документы/microblog/app/templates/_post.html", line 3, in top-level template code
     <td><img src="{{ post.author.avatar(36) }}"></td>
 jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
-2019-06-03 17:35:00,080 INFO: Microblog startup [in /home/arthur/Документы/microblog/app/__init__.py:43]
+2019-06-03 13:14:23,017 INFO: Microblog startup [in /home/arthur/Документы/microblog/app/__init__.py:43]
